@@ -1,6 +1,6 @@
 ---
 title: "Lab 1 - Data visualization"
-author: "[INSERT NAME]"
+author: "Karina Marinovich"
 format: pdf
 editor: visual
 ---
@@ -12,13 +12,26 @@ editor: visual
 #| message: false
 
 library(tidyverse)
+library(viridis)
 ```
 
 ## Exercise 1
 
 (Type your answer to Exercise 1 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
 
+```{r ex-1}
+ggplot(midwest,
+       aes(x = popdensity)) +
+  geom_histogram(binwidth = 10000)
+```
+The shape is asymmetrical, skewed right. 
+There appears to be an outlier at around 90,000
 ## Exercise 2
+```{r ex-2}
+install.packages("viridis")
+library(viridis)
+
+```
 
 (Type your answer to Exercise 2 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
 
@@ -28,11 +41,8 @@ library(tidyverse)
 
 ## Exercise 4
 
-
 ## Exercise 5
 
-
 ## Exercise 6
-
 
 ## Exercise 7
