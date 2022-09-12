@@ -20,16 +20,17 @@ library(viridis)
 (Type your answer to Exercise 1 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
 
 ```{r ex-1}
+#| label: histogram-population-density 
 ggplot(midwest,
        aes(x = popdensity)) +
-  geom_histogram(binwidth = 10000)
+  geom_histogram(binwidth = 10000) + labs(x = "Population Density", y = "County", title = "Population Density of Midwest Counties")
 ```
-The shape is asymmetrical, skewed right. 
-There appears to be an outlier at around 90,000
+The shape of the distribution of Population Density of Midwest Counties is asymmetrical, skewed right. 
+There appears to be an outlier when the population density is around 90,000
 ## Exercise 2
 ```{r ex-2}
-install.packages("viridis")
-library(viridis)
+#| label: scatterplot_percollege
+ggplot(midwest, aes(x = percollege, y = percbelowpoverty, color = state)) + geom_point() + labs(x= "Percent of People Who Attended College", y = "Percent of People Below Poverty", color = "State", title = "Attending College versus Poverty Rates") + scale_fill_viridis()
 
 ```
 
