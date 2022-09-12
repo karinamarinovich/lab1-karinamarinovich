@@ -21,6 +21,7 @@ library(viridis)
 
 ```{r ex-1}
 #| label: histogram-population-density 
+
 ggplot(midwest,
        aes(x = popdensity)) +
   geom_histogram(binwidth = 10000) + labs(x = "Population Density", y = "County", title = "Population Density of Midwest Counties")
@@ -30,19 +31,31 @@ There appears to be an outlier when the population density is around 90,000
 ## Exercise 2
 ```{r ex-2}
 #| label: scatterplot_percollege
+
 ggplot(midwest, aes(x = percollege, y = percbelowpoverty, color = state)) + geom_point() + labs(x= "Percent of People Who Attended College", y = "Percent of People Below Poverty", color = "State", title = "Attending College versus Poverty Rates") + scale_fill_viridis()
 
 ```
 
-(Type your answer to Exercise 2 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
 
 ## Exercise 3
 
-(Type your answer to Exercise 3 here. Add code chunks as needed. Don't forget to label your code chunk. Do not use spaces in code chunk labels.)
+There is a negative correlation between the percent of people who attended college and percent of people below the poverty line. This suggests that attending college increases one's likelihood of not living in poverty. Illinois shows the weakest correlation, as its data points are considerably scattered. Indiana's data points appear to be the greatest in the percentage of people below poverty. Michigan and Illinois show the highest percentage of people living below poverty, relative to the other states. Michigan holds the greatest outlier for percent of people who attended college at around 48% and Wisconsin has the greatest outlier for percent of people beloow poverty at around 49%. Overall, the trend for the relationship between college attendence and poverty is very similar for these states. 
 
 ## Exercise 4
 
+```{r ex-4}
+#| label: faceted_percollege
+
+ggplot(midwest, aes(x = percollege, y = percbelowpoverty)) + geom_point() + labs(x= "Percent of People Who Attended College", y = "Percent of People Below Poverty", color = "State", title = "Attending College versus Poverty Rates") + facet_wrap(~state) + geom_smooth(se = FALSE)
+```
+I prefer the plot in excercise 4 because the overlapping, cluttered, different colored data points in ex 2 made it difficult to compare the trends of different states. This plot separates the states' data points, making it easier to compare trends side by side. I also appreciate the lines, which really help me visualize the data trends. 
+
 ## Exercise 5
+```{r}
+#| label: boxplot_area_of_states
+```
+
+
 
 ## Exercise 6
 
