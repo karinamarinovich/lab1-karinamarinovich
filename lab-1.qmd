@@ -37,7 +37,7 @@ There appears to be an outlier when the population density is about 90,000.
 ggplot(midwest, aes(x = percollege, y = percbelowpoverty, color = state)) + 
   geom_point() + labs(x= "Percent of People Who Attended College", 
                       y = "Percent of People Below Poverty", color = "State", 
-                      title = "Attending College versus Poverty Rates") + scale_fill_viridis()
+title = "Attending College versus Poverty Rates") + scale_fill_viridis()
 
 ```
 
@@ -64,7 +64,8 @@ is very similar for these states.
 ggplot(midwest, aes(x = percollege, y = percbelowpoverty)) + geom_point() + 
   labs(x= "Percent of People Who Attended College", 
        y = "Percent of People Below Poverty", color = "State", 
-       title = "Attending College versus Poverty Rates") + facet_wrap(~state) + geom_smooth(se = FALSE)
+       title = "Attending College versus Poverty Rates") + 
+  facet_wrap(~state) + geom_smooth(se = FALSE)
 ```
 I prefer the plot in excercise 4 because the overlapping, cluttered, different 
 colored data points in ex 2 made it difficult to compare the trends of 
